@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Brand } from 'src/app/types/Brand';
 import { Vehicles } from 'src/app/types/Vehicles';
+import { CreateVehicleService } from '../create-vehicle/create-vehicle.service';
 import { HomeService } from './home.service';
 @Component({
   selector: 'app-home',
@@ -10,13 +12,17 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
   vehicles: Vehicles[] = []
   countVehicles = 0
-  isLastWeekFilter = false
+  isAnotherFilters = false
   brandFilter: null | string = null
   brands: Brand[] = []
   isFiltered = false
   prefix = 'http://localhost:4200/'
   routes: { name: string, path: string }[] = [{ name: 'Login', path: `${this.prefix}auth` }, { name: 'Cadastrar veículo', path: `${this.prefix}createVehicle` }]
-  constructor(private homeService: HomeService) { }
+  public decadeForm: FormGroup = this.formBuilder.group({
+    decade: [1970, Validators.required]
+  });
+
+  constructor(private homeService: HomeService, private formBuilder: FormBuilder, private createVehicleService: CreateVehicleService) { }
 
   ngOnInit(): void {
     this.getVehicles()
@@ -44,9 +50,20 @@ export class HomeComponent implements OnInit {
 
   removeFilters() {
     this.isFiltered = false
+    this.isAnotherFilters = false
     this.getVehicles()
   }
-  getVehiclesForDecade(){
-
+  public getVehiclesForDecade(e: SubmitEvent) {
+    e.preventDefault()
+    if (this.decadeForm.valid) {
+      this.homeService.getVehiclesByDecade(this.decadeForm.value.decade)
+        .subscribe(
+          data => {
+            this.decadeForm.reset()
+            this.isAnotherFilters = true
+            this.vehicles = data.vehicles
+          },
+          error => alert('Ops, erro buscar veículos! '))
+    } else { alert('Insira um valor válido') }
   }
 }

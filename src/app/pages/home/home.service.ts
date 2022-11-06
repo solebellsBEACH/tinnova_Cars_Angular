@@ -20,4 +20,7 @@ export class HomeService {
   getVehiclesForBrand(id: number) {
     return this.http.get<IGetVehicles>(`${this.url}vehicle?brand_id=${id}`)
   }
+  getVehiclesByDecade(decade: number) {
+    return this.http.get<IGetVehicles>(`${this.url}vehicleByDecade/${decade}`)
+  }
 }
