@@ -1,0 +1,7 @@
+<header>
+<div id="content-left">    <img src="../../../assets/icons/car-Icon.svg" />
+    <h1>{{pageTitle}}</h1></div>
+    <div class="content-links">
+        <a *ngFor="let route of routes" [href]="route.path" >{{route.name}}</a>
+    </div>
+</header>
