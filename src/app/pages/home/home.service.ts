@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { IGetBrands, IGetVehicles } from './interfaces';
+import { IGetBrands, IGetVehicles } from '../../types/interfaces' ;
 
 
 @Injectable()

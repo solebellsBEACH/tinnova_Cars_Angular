@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/types/Brand';
 import { Vehicles } from 'src/app/types/Vehicles';
 import { HomeService } from './home.service';
-import { IGetVehicles } from './interfaces';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
