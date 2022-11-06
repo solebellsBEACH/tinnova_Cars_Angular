@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/auth',
+    redirectTo: '/home',
   },
   { path: 'auth', component: AuthComponent },
   { path: 'home', component: HomeComponent }
