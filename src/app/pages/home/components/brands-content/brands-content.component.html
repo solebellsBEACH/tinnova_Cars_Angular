@@ -1,9 +1,5 @@
 <section>
     <div class="content">
-        <div class="brand-container"><img src='https://cdn.worldvectorlogo.com/logos/chevrolet-1.svg'/></div>
-        <div class="brand-container"><img src='https://cdn.worldvectorlogo.com/logos/chevrolet-1.svg'/></div>
-        <div class="brand-container"><img src='https://cdn.worldvectorlogo.com/logos/chevrolet-1.svg'/></div>
-        <div class="brand-container"><img src='https://cdn.worldvectorlogo.com/logos/chevrolet-1.svg'/></div>
-        <div class="brand-container"><img src='https://cdn.worldvectorlogo.com/logos/chevrolet-1.svg'/></div>
+        <div class="brand-container" *ngFor="let brand of brands"><img src='{{brand.image}}' /></div>
     </div>
 </section>

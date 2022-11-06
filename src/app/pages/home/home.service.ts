@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { IGetVehicles } from './interfaces';
-
-
+import { IGetBrands, IGetVehicles } from './interfaces';
 
 
 @Injectable()
@@ -15,5 +13,8 @@ export class HomeService {
   }
   getVehicles() {
     return this.http.get<IGetVehicles>(`${this.url}vehicleListAll`)
+  }
+  getBrands() {
+    return this.http.get<IGetBrands>(`${this.url}brandListAll`)
   }
 }

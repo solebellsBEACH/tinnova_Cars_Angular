@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Brand } from 'src/app/types/Brand';
 import { Vehicles } from 'src/app/types/Vehicles';
 import { HomeService } from './home.service';
 import { IGetVehicles } from './interfaces';
@@ -9,12 +10,17 @@ import { IGetVehicles } from './interfaces';
 })
 export class HomeComponent implements OnInit {
   vehicles: Vehicles[] = []
+  brands: Brand[] = []
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     this.getVehicles()
+    this.getBrands()
   }
   getVehicles() {
     this.homeService.getVehicles().subscribe(e => { this.vehicles = e.vehicles })
+  }
+  getBrands() {
+    this.homeService.getBrands().subscribe(e => { this.brands = e.brands })
   }
 }
