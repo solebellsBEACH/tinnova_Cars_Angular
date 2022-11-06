@@ -11,6 +11,8 @@ import { IGetVehicles } from './interfaces';
 export class HomeComponent implements OnInit {
   vehicles: Vehicles[] = []
   brands: Brand[] = []
+  prefix = 'http://localhost:4200/'
+  routes: { name: string, path: string }[] = [{ name: 'Login', path: `${this.prefix}auth` }, { name: 'Cadastrar veículo', path: `${this.prefix}auth` }]
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {

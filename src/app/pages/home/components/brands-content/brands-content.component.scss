@@ -9,8 +9,6 @@ section {
 .content {
     width: 100%;
     height: auto;
-    // display: flex;
-    // flex-direction: row;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     @media(max-width:510px) {
@@ -39,12 +37,7 @@ section {
 
     img {
         object-fit: cover;
-
         max-width: 95%;
         max-height: 95%;
-        // width: 20%;
-        // height: 20%;
-        // width: 200px;
-        // height:90px;
     }
 }

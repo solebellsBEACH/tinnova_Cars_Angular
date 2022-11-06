@@ -1,4 +1,7 @@
 <header>
     <img src="../../../assets/icons/car-Icon.svg" />
     <h1>{{pageTitle}}</h1>
+    <div class="content-links">
+        <a *ngFor="let route of routes" [href]="route.path" >{{route.name}}</a>
+    </div>
 </header>

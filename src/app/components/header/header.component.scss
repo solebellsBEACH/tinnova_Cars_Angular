@@ -1,20 +1,37 @@
 @import '../../../styles/variables.scss';
 
-header{
-    display:flex;
+header {
+    display: flex;
     align-items: center;
     // justify-content: center;
     flex-direction: row;
     width: 100%;
-    height:4rem;
+    height: 4rem;
     background-color: $template-color-8;
-    padding:5px 2rem;
+    padding: 5px 2rem;
 }
-img{
+
+img {
     height: 60px;
 }
-h1{
+
+h1 {
     font-weight: bold;
-    color:$white;
-    margin:0 1rem;
+    color: $white;
+    margin: 0 1rem;
+}
+
+.content-links {
+    position: absolute;
+    right: 5vw;
+    a {
+        font-weight: bold;
+        color: $white;
+        margin: 0 1rem;
+        text-decoration: none;
+
+        &:hover{
+            color: $text-color-2;
+        }
+    }
 }
