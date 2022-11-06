@@ -8,10 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './pages/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateVehicleComponent } from './pages/create-vehicle/create-vehicle.component';
+import { CreateVehicleModule } from './pages/create-vehicle/create-vehicle.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateVehicleComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +19,8 @@ import { CreateVehicleComponent } from './pages/create-vehicle/create-vehicle.co
     AuthModule,
     HomeModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CreateVehicleModule
   ],
 
   bootstrap: [AppComponent]

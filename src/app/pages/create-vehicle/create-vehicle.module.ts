@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CreateVehicleComponent } from './create-vehicle.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CreateVehicleComponent
+  ],
   imports: [
     CommonModule
   ]
