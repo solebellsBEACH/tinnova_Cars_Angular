@@ -3,7 +3,8 @@
 .content {
     width: auto;
     min-height: 200px;
-    padding: 3rem 1.5rem;
+    padding: 3rem 5vw;
+    
 }
 
 .content-itens {
@@ -23,6 +24,23 @@
 
 .grid-itens {
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+    grid-template-areas:
+        "a a a a";
+    grid-template-rows: auto auto;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-column: 150px calc(90vw - 150px);
+
+    @media only screen and  (max-width:1560px){
+        grid-template-areas:
+        "a a a";
+    }
+    @media only screen and  (max-width:1200px){
+        grid-template-areas:
+        "a a";
+    }
+    @media only screen and  (max-width:800px){
+        grid-template-areas:
+        "a";
+    }
 }
