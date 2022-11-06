@@ -1,0 +1,21 @@
+
+@import "./styles/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800&family=Roboto+Mono:wght@200;300;400;600&family=Roboto:wght@300;400;700&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+
+body{
+    background:$background;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

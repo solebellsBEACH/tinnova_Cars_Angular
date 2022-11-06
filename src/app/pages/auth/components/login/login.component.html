@@ -1,0 +1,14 @@
+<form class="content" [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+    <h1>Login</h1>
+    <div class="input-container">
+        <input class="input-content" formControlName="name" placeholder='Name'>
+    </div>
+    <div class="input-container">
+        <input class="input-content" formControlName="email" type="email" placeholder='Email'>
+    </div>
+    <div class="input-container">
+        <input class="input-content" formControlName="password" type="password" placeholder='Password'>
+    </div>
+    <!-- <mat-spinner id='spinner' diameter='40' *ngIf="loading" color="warn"></mat-spinner> -->
+    <button *ngIf="!loading" class="submit-button" type="submit">Logar</button>
+</form>
