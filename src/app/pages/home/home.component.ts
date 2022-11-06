@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   vehicles: Vehicles[] = []
   brands: Brand[] = []
   prefix = 'http://localhost:4200/'
-  routes: { name: string, path: string }[] = [{ name: 'Login', path: `${this.prefix}auth` }, { name: 'Cadastrar veículo', path: `${this.prefix}auth` }]
+  routes: { name: string, path: string }[] = [{ name: 'Login', path: `${this.prefix}auth` }, { name: 'Cadastrar veículo', path: `${this.prefix}createVehicle` }]
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
