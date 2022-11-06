@@ -110,3 +110,11 @@ h2 {
     grid-column-gap: 16px;
     grid-column: 150px calc(90vw - 150px);
 }
+
+fieldset{
+    width: 30%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:$white;
+}
