@@ -3,9 +3,8 @@
 .content {
     display: flex;
     flex-direction: column;
-    // align-items: center;
     width: 350px;
-    min-height: 500px;
+    min-height: 300px;
     background-color: $white;
     border-radius: 5px;
     padding-bottom: 2rem;
@@ -93,6 +92,7 @@ h1 {
     color: $text-color-1;
     font-weight: 900;
     background-color: $template-color-5;
+
     &:hover {
         filter: none;
     }

@@ -1,0 +1,18 @@
+@import '../../../../../styles/variables.scss';
+
+section {
+    margin-top: 1rem;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 900;
+    color:$text-color-2;
+}
+
+img{
+    margin-right: 0.2rem;
+    height: 30px;
+}

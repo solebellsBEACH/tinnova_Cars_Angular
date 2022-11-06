@@ -2,8 +2,9 @@
 <div class="content">
     <section class="content-itens">
         <h1 class="content-title">Veículos</h1>
-        <div class='grid-itens'*ngFor="let vehicle of vehicles">
-            <home-product-item name="{{vehicle.name}}" color="{{vehicle.color}}"  image="{{vehicle.image}}" [isSold]="vehicle.is_sold"></home-product-item>
+        <div class='grid-itens' *ngFor="let vehicle of vehicles">
+            <home-product-item name="{{vehicle.name}}" color="{{vehicle.color}}" image="{{vehicle.image}}"
+                [year]="vehicle.year" [isSold]="vehicle.is_sold"></home-product-item>
         </div>
     </section>
 </div>
