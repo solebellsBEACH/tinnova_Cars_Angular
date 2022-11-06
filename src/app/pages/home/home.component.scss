@@ -1,20 +1,28 @@
 @import '../../../styles/variables.scss';
 
-.content{
+.content {
     width: auto;
     min-height: 200px;
     padding: 3rem 1.5rem;
 }
-.content-itens{
+
+.content-itens {
     width: auto;
     min-height: 200px;
-    padding:1rem;
-    background:$template-color-1;
+    padding: 1rem;
+    background: $template-color-1;
     border-radius: 10px;
     border: 1px solid $template-color-8;
 }
-.content-title{
+
+.content-title {
     font-weight: bold;
     color: $text-color-2;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
+}
+
+.grid-itens {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
 }
