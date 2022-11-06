@@ -14,10 +14,24 @@
         <div class="input-container">
             <input class="input-content" formControlName="description" placeholder='Descrição'>
         </div>
-        <div class="allinputs-content">
-            <input id="c2" type="radio">
-            <label for="c2">Checkbox</label>
-        </div>
+        <h2>Selecione a marca do veículo</h2>
+        <section class="brand-grid">
+            <div class="allinputs-content" *ngFor="let brand of brands">
+                <input id="c2" type="radio"  [value]="brand.id" formControlName="brand_id">
+                <label for="c2">{{brand.name}}</label>
+            </div>
+        </section>
+        <h2>Selecione o status do veículo</h2>
+        <section class="brand-grid">
+            <div class="allinputs-content">
+                <input id="c2" type="radio"  [value]="false" formControlName="is_sold">
+                <label for="c2">Disponível</label>
+            </div>
+            <div class="allinputs-content">
+                <input id="c2" type="radio"  [value]="true" formControlName="is_sold">
+                <label for="c2">Vendido</label>
+            </div>
+        </section>
         <button class="submit-button" type="submit">Cadastrar</button>
     </form>
 </div>

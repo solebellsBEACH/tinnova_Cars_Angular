@@ -1,5 +1,6 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/inputs.scss';
+
 .content {
     width: auto;
     min-height: 200px;
@@ -31,10 +32,15 @@
 
 h1 {
     font-weight: 600;
-    margin:0 2rem 2rem 2rem;
+    margin: 0 2rem 2rem 2rem;
     color: $white;
 }
-
+h2 {
+    font-weight: 600;
+    margin: 1rem 0 ;
+    font-size:19px;
+    color: $white;
+}
 .submit-button {
     margin-top: 1rem;
     width: 50%;
@@ -43,7 +49,8 @@ h1 {
     border: 4px solid $template-color-2;
     background-color: $template-color-1;
     font-weight: 600;
-    &:hover{
+
+    &:hover {
         background-color: $template-color-2;
     }
 }
@@ -60,8 +67,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:2px solid $template-color-3;
-    margin:0.5rem 0 ;
+    border: 2px solid $template-color-3;
+    margin: 0.5rem 0;
 }
 
 .input-content {
@@ -87,8 +94,19 @@ h1 {
 }
 
 
-.allinputs-content{
+.allinputs-content {
     background: $template-color-5;
     padding: 0.3rem;
     border-radius: 5px;
+}
+
+.brand-grid {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-areas:
+        "a a a";
+    grid-template-rows: auto auto;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-column: 150px calc(90vw - 150px);
 }
