@@ -12,6 +12,7 @@ export class ProductItemComponent implements OnInit {
   @Input() image: string = 'https://robociencia.com.br/wp-content/uploads/2021/03/robo.png'
   @Input() price: number = 0
   @Input() year: number = 2000
+  @Input() isSold: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
