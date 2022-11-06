@@ -15,7 +15,7 @@ export class CreateVehicleComponent implements OnInit {
   brands: Brand[] = []
   public cadastroForm: FormGroup = this.formBuilder.group({
     name: ['CarroTest', Validators.required],
-    image: ['https://classic.exame.com/wp-content/uploads/2022/09/1024x768-2022_07_Ferrari_SP51_6-e1664397060617.jpg?quality=70&strip=info&w=935', [Validators.required]],
+    image: ['https://www.toyota.com.br/wp-content/themes/toyota/ciclo-toyota/carros/yaris-hatch_xl_040_carPage.png', [Validators.required]],
     color: ['red', [Validators.required]],
     is_sold: [false, [Validators.required]],
     year: [2002, [Validators.required, Validators.min(1970), Validators.max(2023)]],
@@ -33,7 +33,9 @@ export class CreateVehicleComponent implements OnInit {
   }
   postVehicle(body: Vehicles) {
     return this.createVehicleService.postVehicle(body).subscribe(
-      data => alert('Cadastro realizado com sucesso '),
+      data => {
+        this.cadastroForm.reset()
+        alert('Cadastro realizado com sucesso ')},
       error => alert('Ops, erro ao cadastrar veículo! '))
   }
   public submitForm() {
