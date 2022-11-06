@@ -1,8 +1,25 @@
 <app-header pageTitle="Home" [routes]="routes"></app-header>
 <div class="content">
-    <home-brands-content [brands]="brands"></home-brands-content>
+    <section class="brands-section">
+        <h2>Clique na marca para usar como filtro</h2>
+        <div class="brands-content">
+            <div class="brand-container" *ngFor="let brand of brands"
+                (click)="getVehiclesForBrands(brand.id, brand.name)"><img src='{{brand.image}}' /></div>
+        </div>
+    </section>
+    <h1 class="content-title" *ngIf="isFiltered">{{brandFilter}} distribuiu {{countVehicles}} veículos</h1>
+    <div class="filter-input" *ngIf="!isFiltered">
+        <label>Década de fabricação</label>
+        <section>
+            <input type="number" min="1970" max="2030" />
+            <button (click)="getVehiclesForDecade()">Aplicar</button>
+        </section>
+    </div>
     <section class="content-itens">
-        <h1 class="content-title">Veículos</h1>
+        <button class="button-removeFilters" *ngIf="isFiltered || isLastWeekFilter" (click)="removeFilters()">Remover
+            Filtros</button>
+        <h1 class="content-title" *ngIf="vehicles.length">Veículos</h1>
+        <h1 class="content-title" *ngIf="!vehicles.length">Nenhum veículo encontrado</h1>
         <div class='grid-itens'>
             <home-product-item *ngFor="let vehicle of vehicles" name="{{vehicle.name}}" color="{{vehicle.color}}"
                 image="{{vehicle.image}}" [year]="vehicle.year" [isSold]="vehicle.is_sold"></home-product-item>
