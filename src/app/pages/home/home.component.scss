@@ -165,3 +165,10 @@
         }
     }
 }
+
+#notSold{
+    background-color:$template-color-7;
+    &:hover {
+        background-color:$template-color-4;
+    }
+}

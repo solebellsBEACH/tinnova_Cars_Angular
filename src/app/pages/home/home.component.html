@@ -8,13 +8,14 @@
         </div>
     </section>
     <h1 class="content-title" *ngIf="isFiltered">{{brandFilter}} distribuiu {{countVehicles}} veículos</h1>
-    <form class="filter-input" *ngIf="!isFiltered" [formGroup]="decadeForm" (ngSubmit)="getVehiclesForDecade($event)">
+    <form class="filter-input" *ngIf="!isFiltered && !isAnotherFilters" [formGroup]="decadeForm" (ngSubmit)="getVehiclesForDecade($event)">
         <label>Década de fabricação</label>
         <section>
             <input type="number" min="1970" max="2030" formControlName='decade'/>
             <button type="submit" >Aplicar</button>
         </section>
     </form>
+    <button class="button-removeFilters" *ngIf="!isAnotherFilters" id="notSold" (click)="getNotSoldVehicles()">Mostrar não vendidos</button>
     <section class="content-itens">
         <button class="button-removeFilters" *ngIf="isFiltered || isAnotherFilters" (click)="removeFilters()">Remover
             Filtros</button>

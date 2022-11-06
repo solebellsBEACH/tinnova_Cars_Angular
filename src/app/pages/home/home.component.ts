@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     this.isAnotherFilters = false
     this.getVehicles()
   }
-  public getVehiclesForDecade(e: SubmitEvent) {
+  getVehiclesForDecade(e: SubmitEvent) {
     e.preventDefault()
     if (this.decadeForm.valid) {
       this.homeService.getVehiclesByDecade(this.decadeForm.value.decade)
@@ -65,5 +65,16 @@ export class HomeComponent implements OnInit {
           },
           error => alert('Ops, erro buscar veículos! '))
     } else { alert('Insira um valor válido') }
+  }
+
+  getNotSoldVehicles(){
+    this.homeService.getNotSoldVehicles()
+        .subscribe(
+          data => {
+            this.decadeForm.reset()
+            this.isAnotherFilters = true
+            this.vehicles = data.vehicles
+          },
+          error => alert('Ops, erro buscar veículos! '))
   }
 }
