@@ -3,57 +3,98 @@
 .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 17rem;
-    min-height: 15rem;
+    // align-items: center;
+    width: 350px;
+    min-height: 500px;
     background-color: $white;
     border-radius: 5px;
-    border: 1px solid $template-color-3;
     padding-bottom: 2rem;
+    border-radius: 10px;
 }
 
 img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     object-fit: cover;
-    width: 16rem;
-    height: 12rem;
+    width: 100%;
+    height: 200px;
 }
 
 .content-bottom {
-    margin: 1rem 0.5rem 0 0.5rem;
-    width: 16rem;
+    margin: 1rem 1rem 0 0.9rem;
+    width: auto;
 }
 
-a {
+h1 {
     line-height: 18px;
     width: fit-content;
-    margin: 0px 0px 10px;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
     color: $text-color-2;
 }
 
 .color-content {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     h2 {
         font-size: 18px;
-        font-weight: 900
+        font-weight: 900;
+        color: $text-color-2;
     }
 
     div {
-        margin-left:0.5rem;
+        margin-left: 0.5rem;
         width: 2rem;
         height: 2rem;
-        border-radius:30px;
+        border-radius: 30px;
         border: 0.1rem solid black;
 
-        &:hover{
-        
-        }
+        &:hover {}
     }
 
+
+}
+
+.information-content {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+
+    img {
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+        margin-right: 1rem;
+    }
+
+    h1 {
+        width: 150px;
+        font-size: 13px;
+        color: $text-color-2;
+        font-weight: 300;
+    }
+
+    #year {
+        font-size: 17px;
+    }
+}
+
+.conhecer-button {
+    margin-top: 1rem;
+    width: 100%;
+    border: none;
+    min-height: 40px;
+    border-radius: 7px;
+    filter: grayscale(0.5);
+    color: $text-color-1;
+    font-weight: 900;
+    background-color: $template-color-5;
+    &:hover {
+        filter: none;
+    }
 
 }
