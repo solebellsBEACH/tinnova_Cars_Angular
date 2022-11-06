@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IGetBrands } from 'src/app/types/interfaces';
+import { Vehicles } from 'src/app/types/Vehicles';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,8 @@ export class CreateVehicleService {
   }
   getBrands() {
     return this.http.get<IGetBrands>(`${this.url}brandListAll`)
+  }
+  postVehicle(body: Vehicles) {
+    return this.http.post(`${this.url}vehicle`, body)
   }
 }
