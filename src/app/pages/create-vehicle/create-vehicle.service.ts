@@ -27,4 +27,7 @@ export class CreateVehicleService {
   postVehicle(body: Vehicles) {
     return this.http.post(`${this.url}vehicle`, body, this.httpOptions)
   }
+  deleteVehicle(id: number) {
+    return this.http.delete(`${this.url}vehicle/${id}`, this.httpOptions)
+  }
 }

@@ -22,8 +22,30 @@
         <h1 class="content-title" *ngIf="vehicles.length">Veículos</h1>
         <h1 class="content-title" *ngIf="!vehicles.length">Nenhum veículo encontrado</h1>
         <div class='grid-itens'>
-            <home-product-item *ngFor="let vehicle of vehicles" name="{{vehicle.name}}" color="{{vehicle.color}}"
-                image="{{vehicle.image}}" [year]="vehicle.year" [isSold]="vehicle.is_sold"></home-product-item>
+            <!--  -->
+            <div *ngFor="let vehicle of vehicles" class='product-item-content'>
+                <div class='product-item-content-top'>
+                    <img [src]='vehicle.image' />
+                </div>
+                <div class='product-item-content-bottom'>
+                    <h1>{{vehicle.name}}</h1>
+                    <div class="product-item-information-content"><img src='../../../../../assets/icons/location-Icon.svg' />
+                        <h1>em São José dos Campos</h1>
+                    </div>
+                    <div class="product-item-information-content"><img src='../../../../../assets/icons/date-Icon-com.svg' />
+                        <h1 id="year">{{vehicle.year}}</h1>
+                    </div>
+                    <home-is-sold [isSold]='vehicle.is_sold' ></home-is-sold>
+                    <div class="product-item-color-content">
+                        <h2>Cor do carro</h2>
+                        <div [ngStyle]="{'background-color': vehicle.color}"></div>
+                    </div>
+                    <button class="product-item-delete-button" (click)="deleteVehicle()">Excluir Veículo</button>
+                </div>
+            </div>
+            <!--  -->
+            <!-- <home-product-item *ngFor="let vehicle of vehicles" name="{{vehicle.name}}" color="{{vehicle.color}}"
+                image="{{vehicle.image}}" [year]="vehicle.year" [isSold]="vehicle.is_sold" [id]="vehicle.id"></home-product-item> -->
         </div>
     </section>
 </div>
