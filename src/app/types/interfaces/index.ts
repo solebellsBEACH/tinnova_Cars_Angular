@@ -12,4 +12,11 @@ export interface IGetVehicles {
     count: number,
     message: string
   }
-  
+  export interface ILoginResponse{
+    token: string
+  }
+
+  export interface IUserLogin{
+    email: string
+    password: string
+  }

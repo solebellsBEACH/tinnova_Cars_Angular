@@ -1,3 +1,13 @@
 <div class="container">
-    <auth-login></auth-login>
+    <form class="content" [formGroup]="cadastroForm" (ngSubmit)="submitForm($event)">
+        <h1>Login</h1>
+        <div class="input-container">
+            <input class="input-content" formControlName="email" type="email" placeholder='Email'>
+        </div>
+        <div class="input-container">
+            <input class="input-content" formControlName="password" type="password" placeholder='Password'>
+        </div>
+        <!-- <mat-spinner id='spinner' diameter='40' *ngIf="loading" color="warn"></mat-spinner> -->
+        <button class="submit-button" type="submit">Logar</button>
+    </form>
 </div>
