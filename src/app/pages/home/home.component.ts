@@ -67,17 +67,18 @@ export class HomeComponent implements OnInit {
     } else { alert('Insira um valor válido') }
   }
 
-  getNotSoldVehicles(){
+  getNotSoldVehicles() {
     this.homeService.getNotSoldVehicles()
-        .subscribe(
-          data => {
-            this.decadeForm.reset()
-            this.isAnotherFilters = true
-            this.vehicles = data.vehicles
-          },
-          error => alert('Ops, erro buscar veículos! '))
+      .subscribe(
+        data => {
+          this.decadeForm.reset()
+          this.isAnotherFilters = true
+          this.vehicles = data.vehicles
+        },
+        error => alert('Ops, erro buscar veículos! '))
   }
-  deleteVehicle(){ 
-    // this.createVehicleService.deleteVehicle(this.id).subscribe(e =>{console.log(e)})
+  deleteVehicle(id: number) {
+    if (localStorage.getItem('token')) this.createVehicleService.deleteVehicle(id).subscribe(data => { this.getVehicles() }, error => { alert('Erro ao deletar Veículo') })
+    else { alert('Para essa ação você precisa estar logado') }
   }
 }

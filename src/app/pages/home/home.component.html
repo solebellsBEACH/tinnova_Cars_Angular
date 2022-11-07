@@ -40,12 +40,9 @@
                         <h2>Cor do carro</h2>
                         <div [ngStyle]="{'background-color': vehicle.color}"></div>
                     </div>
-                    <button class="product-item-delete-button" (click)="deleteVehicle()">Excluir Veículo</button>
+                    <button class="product-item-delete-button" (click)="deleteVehicle(vehicle.id)">Excluir Veículo</button>
                 </div>
             </div>
-            <!--  -->
-            <!-- <home-product-item *ngFor="let vehicle of vehicles" name="{{vehicle.name}}" color="{{vehicle.color}}"
-                image="{{vehicle.image}}" [year]="vehicle.year" [isSold]="vehicle.is_sold" [id]="vehicle.id"></home-product-item> -->
         </div>
     </section>
 </div>

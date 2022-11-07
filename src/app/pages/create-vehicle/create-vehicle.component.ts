@@ -32,11 +32,14 @@ export class CreateVehicleComponent implements OnInit {
     this.createVehicleService.getBrands().subscribe(e => { this.brands = e.brands })
   }
   postVehicle(body: Vehicles) {
-    return this.createVehicleService.postVehicle(body).subscribe(
+    if (localStorage.getItem('token')) this.createVehicleService.postVehicle(body).subscribe(
       data => {
         this.cadastroForm.reset()
-        alert('Cadastro realizado com sucesso ')},
+        alert('Cadastro realizado com sucesso ')
+      },
       error => alert('Ops, erro ao cadastrar veículo! '))
+    else { alert('Para essa ação você precisa estar logado') }
+
   }
   public submitForm() {
     if (this.cadastroForm.valid) {
